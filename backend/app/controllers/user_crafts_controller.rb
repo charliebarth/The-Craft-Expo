@@ -1,0 +1,2 @@
+class UserCraftsController < ApplicationController
+end

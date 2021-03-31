@@ -1,0 +1,2 @@
+class UserCraft < ApplicationRecord
+end
