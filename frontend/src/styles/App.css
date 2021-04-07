@@ -7,6 +7,24 @@
   width: 80vw;
 }
 
+#crafts-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+
+#crafts-list h2 {
+  color: white;
+}
+
+#crafts-list a {
+  color: white;
+  border: solid white 1px;
+  box-shadow: white 1px 3px;
+  text-decoration: none;
+}
+
 nav a {
   padding: 1em;
   text-decoration: none;

@@ -1,11 +1,26 @@
-import React from 'react';
+import { Link } from 'react-router-dom'
 
-const Crafts = ({ title, img_url }) => (
-  <div className="craft">
-    {/* <img src={ img_url } alt={title}/>
-    <h3>{ title }</h3> */}
-    <p>Test</p>
-  </div>
-)
+export default function CraftList({crafts}) {
 
-export default Crafts; 
+  const renderCrafts = () => {
+    console.log(Array.isArray(crafts.data))
+    return crafts.data.map(c => <Link to={`/crafts/${c.attributes.name.toLowerCase().replace(/[ ]/g, '-')}`}>{c.attributes.name}</Link>)
+  }
+
+  return (
+
+    <div id="crafts-list">
+
+      <div/>
+
+      <h2>All Crafts:</h2>
+
+      <div/>
+
+      {renderCrafts()}
+
+    </div>
+
+  )
+
+}
