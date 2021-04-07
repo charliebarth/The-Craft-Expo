@@ -1,10 +1,11 @@
 .App {
-  background: black;
-  box-shadow: purple 5px 5px;
+  /* background: rgba(0, 0, 0, 0.6); */
+  /* box-shadow: rgb(82, 80, 82) 5px 5px; */
   margin-left: 10vw;
   padding: 1em;
   text-align: center;
   width: 80vw;
+  height: 44.2vw;
 }
 
 #crafts-list {
@@ -14,9 +15,26 @@
   grid-column-gap: 1em;
 }
 
-#crafts-list h2 {
+/* #crafts-list h2 {
   color: white;
+} */
+
+/* #one {
+  background: rgba(0, 0, 0, 0.7);
+} */
+
+#craft-view {
+  background: rgba(0, 0, 0, 0.7);
+  /* border-radius: 50px; */
+  /* background-size: 20px 20px; */
 }
+
+.craft-view-image {
+  max-width: 400px;
+  
+}
+
+img { color: white; text-align: center; }
 
 #crafts-list a {
   color: white;
@@ -27,9 +45,13 @@
 
 nav a {
   padding: 1em;
+  background: rgba(2, 20, 100, 0.9);
+  color: rgba(255, 255, 255, 1);;
+  /* border-radius: 25px; */
   text-decoration: none;
 }
 
-h1, p, ol, li, ul {
+h1, h2, p, ol, li, ul {
+
   color: white;
 }
