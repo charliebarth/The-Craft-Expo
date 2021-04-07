@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Craft.create(name: 'Mini Catapult', description: 'A mini toy catapult.', img_url: 'https://i.pinimg.com/originals/e7/de/8b/e7de8b893967cd0115e0b3bb7a90aa32.jpg')
