@@ -32,6 +32,6 @@ class CraftsController < ApplicationController
     end
     
     def craft_params
-        params.require(:craft).permit(:name, :description, :image_link)
+        params.require(:craft).permit(:name, :description, :img_url)
     end
 end

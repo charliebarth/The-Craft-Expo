@@ -1,4 +1,4 @@
 class CraftSerializer
     include FastJsonapi::ObjectSerializer
-    attributes :name, :description, :image_link, :id
+    attributes :name, :description, :img_url, :id
 end
