@@ -1,6 +1,4 @@
 .App {
-  /* background: rgba(0, 0, 0, 0.6); */
-  /* box-shadow: rgb(82, 80, 82) 5px 5px; */
   margin-left: 10vw;
   padding: 1em;
   text-align: center;
@@ -19,14 +17,8 @@
   color: white;
 } */
 
-/* #one {
-  background: rgba(0, 0, 0, 0.7);
-} */
-
 #craft-view {
   background: rgba(0, 0, 0, 0.7);
-  /* border-radius: 50px; */
-  /* background-size: 20px 20px; */
 }
 
 .craft-view-image {
@@ -35,6 +27,10 @@
 }
 
 img { color: white; text-align: center; }
+
+#about {
+  background: rgba(0, 0, 0, 0.8);
+}
 
 #crafts-list a {
   color: white;
