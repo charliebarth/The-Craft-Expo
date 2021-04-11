@@ -18,7 +18,8 @@ class CraftsController < ApplicationController
 
   def index 
         #user = User.find_by(username: craft_params[:username])
-        crafts = Craft.find_by_id(current_user.id)
+        crafts = Craft.where(user_id: current_user.id)
+        #crafts = Craft.find_by(current_user.id)
         serialized_crafts = crafts.map {|craft| CraftSerializer.new(craft)}
         render json: {crafts: serialized_crafts}, status: :accepted
   end
