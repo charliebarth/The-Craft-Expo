@@ -1,4 +1,3 @@
-class CraftSerializer
-    include FastJsonapi::ObjectSerializer
+class CraftSerializer < ActiveModel::Serializer
     attributes :name, :description, :img_url, :id
 end
