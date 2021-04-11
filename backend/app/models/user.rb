@@ -4,5 +4,5 @@ class User < ApplicationRecord
     validate_presence_of :password_digest
     
     has_many :user_crafts
-    has_many :crafts, through: :user_crafts
+    #has_many :crafts, through: :user_crafts
 end
