@@ -1,6 +1,6 @@
 import { fetchDemos } from '../../services/api'
 
-export const getCrafts = () => {
+export const getDemos = () => {
   return (dispatch) => {
     dispatch({ type: "FETCHING" })
     fetchDemos().then(response => {
