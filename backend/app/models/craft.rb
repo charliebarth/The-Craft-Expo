@@ -1,4 +1,4 @@
 class Craft < ApplicationRecord
-    # has_many :user_crafts
-    # has_many :users, through: :user_crafts
+    belongs_to :user
+    #belongs_to :craft
 end

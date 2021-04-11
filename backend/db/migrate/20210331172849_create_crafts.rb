@@ -1,6 +1,6 @@
-class CreateCrafts < ActiveRecord::Migration[6.0]
+class CreateDemos < ActiveRecord::Migration[6.0]
   def change
-    create_table :crafts do |t|
+    create_table :demos do |t|
       t.string :name
       t.string :description
       t.string :img_url

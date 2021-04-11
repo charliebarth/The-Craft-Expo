@@ -3,6 +3,6 @@ class User < ApplicationRecord
     validates_uniqueness_of :username
     validate_presence_of :password_digest
     
-    has_many :user_crafts
+    has_many :crafts
     #has_many :crafts, through: :user_crafts
 end

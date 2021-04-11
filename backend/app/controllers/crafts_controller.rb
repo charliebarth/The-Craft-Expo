@@ -1,37 +1,48 @@
 class CraftsController < ApplicationController
-    before_action :find_craft, only: [:update]
-
-    def create
-        craft = Craft.create(craft_params)
-        render json: CraftSerializer.new(craft).serializable_hash
-    end
-
-    def index 
-        crafts = Craft.all
-        render json: CraftSerializer.new(crafts).serializable_hash
-    end
-  
-    def update
-      if @craft
-        if @craft.update(craft_params)
-          render json: CraftSerializer.new(@craft)
+  def create
+        #user = User.find_by(username: craft_params[:username])
+        demo = Demo.find_by(name: craft_params[:demo_name])
+        craft = Craft.create(
+          name: demo.name, 
+          description: demo.description,
+          user_id: current_user.id,
+          demo_id: demo.id
+        )
+    
+        if craft.valid?
+          render json: { craft: CraftSerializer.new(craft) }, status: :created
         else
-          render json: {error: @craft.errors.full_messages, status: 400}, status: 400
+          render json: { error: 'failed to create craft', messages: craft.errors.full_messages }, status: :not_acceptable
         end
-      else
-        render json: {error: "Sorry, there is no craft with that ID", status: 400}, status: 400
-      end
-    end
-  
-  
-    
-    private
+  end
 
-    def find_craft
-      @craft = Craft.find_by_id(params[:id])
-    end
+  def index 
+        #user = User.find_by(username: craft_params[:username])
+        crafts = Craft.find_by_id(current_user.id)
+        serialized_crafts = crafts.map {|craft| CraftSerializer.new(craft)}
+        render json: {crafts: serialized_crafts}, status: :accepted
+  end
+
+  def destroy
+        craft = Craft.find_by_id(params[:id])
     
-    def craft_params
-        params.require(:craft).permit(:name, :description, :img_url)
-    end
+        if craft
+          Craft.destroy
+          render json: { message: 'Craft deleted'}, status: :accepted
+        else
+          render json: { error: 'Craft not found' }, status: :not_acceptable
+        end
+  end
+
+  private
+
+  def craft_params
+      params.require(:craft).permit(:name, :description, :demo_name, :username, :user_id)
+  end
+  
+  # def serialize_mapper(name)
+  #     demo = Demo.find_by(name: name)
+  #     crafts = Craft.where(demo_id: demo.id)
+  #     crafts.map {|craft| CraftSerializer.new(craft)}
+  # end
 end
