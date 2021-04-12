@@ -1,6 +1,5 @@
 class CraftsController < ApplicationController
   def create
-    byebug
         #user = User.find_by(username: craft_params[:username])
         #demo = Demo.find_by(name: craft_params[:demo_name])
         craft = Craft.create(
