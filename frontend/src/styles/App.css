@@ -6,16 +6,16 @@
   height: 44.2vw;
 }
 
-#crafts-list {
+/* #crafts-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 1em;
   grid-column-gap: 1em;
 }
 
-/* #crafts-list h2 {
+#crafts-list h2 {
   color: white;
-} */
+}
 
 #craft-view {
   background: rgba(0, 0, 0, 0.7);
@@ -43,11 +43,11 @@ nav a {
   padding: 1em;
   background: rgba(2, 20, 100, 0.9);
   color: rgba(255, 255, 255, 1);;
-  /* border-radius: 25px; */
+  border-radius: 25px;
   text-decoration: none;
 }
 
 h1, h2, p, ol, li, ul {
 
   color: white;
-}
+} */

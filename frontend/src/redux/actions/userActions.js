@@ -9,6 +9,15 @@ export const getUser = () => {
   }
 }
 
+export const getUserId = () => {
+  return (dispatch) => {
+    dispatch({ type: "FETCHING" })
+    fetchProfile().then(response => {
+      dispatch({ type: 'SET_USER', payload: response.id })
+    })
+  }
+}
+
 export const setFetchedUser = (username) => {
   return (dispatch) => {
     dispatch({ type: 'SET_USER', payload: username })

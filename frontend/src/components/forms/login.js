@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function LoginForm({ handleLogin }) {
+export default function LoginForm({handleLogin}) {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -9,12 +9,10 @@ export default function LoginForm({ handleLogin }) {
     switch (e.target.name) {
       case 'username':
         setUsername(e.target.value)
-        break
-
+        break;
       case 'password':
         setPassword(e.target.value)
-        break
-
+        break;
       default:
         return null
     }
@@ -22,54 +20,31 @@ export default function LoginForm({ handleLogin }) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    handleLogin({user: { username, password }})
+    handleLogin({user: {username, password}})
   }
 
   return (
-    <main>
-      <div id="login-form-container">
-        <form id="login-form" onSubmit={handleSubmit}>
+    <form id="login-form" onSubmit={handleSubmit}>
 
-          <div id="login-header-container">
-            <h2 id="login-header">LOGIN</h2> 
-          </div>
+      <input type="text"
+      name="username"
+      onChange={handleChange}
+      value={username}
+      placeholder="username"
+      />
 
-          <div>
-            <label>username</label>
+      <input type="text"
+      name="password"
+      onChange={handleChange}
+      value={password}
+      placeholder="password"
+      />
 
-            <input 
-              
-              type="text"
-              name="username"
-              onChange={handleChange}
-              value={username}
-            />
-          </div>
+      <input type="submit"
+      value="Login"
+      />
 
-
-          <div>
-            <label>password</label>
-
-            <input 
-              
-              type="password"
-              name="password"
-              onChange={handleChange}
-              value={password}
-            />
-          </div>
-
-          <div>
-            <input 
-              
-              type="submit" 
-              value="Login" 
-            />
-          </div>
-
-        </form>
-      </div>
-    </main>
+    </form>
   )
 
 }

@@ -1,12 +1,13 @@
 class CraftsController < ApplicationController
   def create
+    byebug
         #user = User.find_by(username: craft_params[:username])
-        demo = Demo.find_by(name: craft_params[:demo_name])
+        #demo = Demo.find_by(name: craft_params[:demo_name])
         craft = Craft.create(
-          name: demo.name, 
-          description: demo.description,
+          name: craft_params["name"], 
+          description: craft_params["description"],
+          img_url: craft_params["img_url"],
           user_id: current_user.id,
-          demo_id: demo.id
         )
     
         if craft.valid?
@@ -38,7 +39,7 @@ class CraftsController < ApplicationController
   private
 
   def craft_params
-      params.require(:craft).permit(:name, :description, :demo_name, :username, :user_id)
+      params.require(:craft).permit(:name, :description, :id, :img_url, :demo_name, :username, :user_id)
   end
   
   # def serialize_mapper(name)

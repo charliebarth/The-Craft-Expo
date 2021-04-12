@@ -1,14 +1,20 @@
-import './styles/App.css';
-import { useEffect, useState } from 'react'
+import './styles/App.css'
 import SignupForm from './components/forms/signup'
 import LoginForm from './components/forms/login'
-import { fetchLogin, postUser } from './services/api'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import DemosContainer from './containers/demosContainer'
-import CraftsContainer from './containers/craftsContainer'
+import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 import { setToken, clearToken, getToken } from './services/localstorage'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import NavBar from './components/nav/navbar'
+import { useEffect } from 'react'
+// import PostContainer from './containers/postsContainer'
+// import PostShowContainer from './containers/postShowContainer'
+// import BoardsContainer from './containers/boardsContainer'
+// import NoMatch from './components/noMatch'
+import DemosContainer from './containers/demosContainer'
+import CraftsContainer from './containers/craftsContainer'
+import DemoCraft from './components/demoCraft'
 
 function App() {
 
@@ -28,7 +34,6 @@ function App() {
   }
 
   const handleSignup = newUser => {
-    console.log(newUser)
     postUser(newUser)
     .then(data => {
       if (data.error) {
@@ -68,7 +73,7 @@ function App() {
   const redirectToLoginPreCheck = (route = "/") => {
     if (userExists()) {
       switch (route) {
-        case "drafting-board":
+        case "drafing-board":
           return <DemosContainer />
 
         case "your-archive":
@@ -104,7 +109,7 @@ function App() {
     } else {
       return (
         <Router>
-          {/* <NavBar handleLogout={handleLogout} /> */}
+          <NavBar handleLogout={handleLogout} />
 
           <Switch>
             
@@ -116,7 +121,7 @@ function App() {
               {redirectToHomePreCheck("login")}
             </Route>
 
-            <Route path="/drafing-board" exact >
+            <Route path="/drafting-board" exact >
               {redirectToLoginPreCheck("drafting-board")}
             </Route>
 
@@ -127,6 +132,8 @@ function App() {
             <Route path="/" exact >
               {redirectToLoginPreCheck()}
             </Route>
+
+            <Route path="/crafts/" component={DemoCraft}/>
 
             {/* <Route path="*" component={NoMatch} /> */}
 
@@ -143,28 +150,4 @@ function App() {
   )
 }
 
-  // const [crafts, setCrafts] = useState([])
-
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/crafts')
-  //   .then(res => res.json())
-  //   .then(setCrafts)
-  // }, [])
-
-//   return (
-//     <div className="App">
-
-//       <Router>
-//         <NavBar />
-//         <Route exact  path='/' component={Welcome}/>
-//         <Route path='/about' component={About}/>
-//         <Route path='/your-archive' component={YourArchive}/>
-//         <Route path='/drafting-board' render={() => <DraftingBoard crafts={crafts} />}/>
-//         <Route exact path="/crafts/:name" render={routerProps => < ViewCraft crafts={crafts} {...routerProps} />} />
-
-//       </Router>
-//     </div>
-//   );
-// }
-
-export default App;
+export default App

@@ -1,12 +1,12 @@
-import DemoCraft from "./demoCraft"
+import Craft from "./craft"
 import {Link} from 'react-router-dom'
 // import uuid from 'react-uuid'
 
-export default function DemoCrafts( crafts ) {
+export default function Crafts( crafts ) {
    //console.log(crafts.crafts[0].name)
     const renderCrafts = () => {
-        return crafts.demos.map(craft => { 
-        return <DemoCraft craft={craft} /> 
+        return crafts.crafts.map(craft => { 
+        return <Craft craft={craft} /> 
         })
     }
 //console.log(crafts)
@@ -20,7 +20,7 @@ export default function DemoCrafts( crafts ) {
 
       <div/>
 
-      <h2>All Crafts:</h2>
+      <h2>Your Archive:</h2>
 
       <div/>
 
@@ -29,5 +29,3 @@ export default function DemoCrafts( crafts ) {
     </div>
   )
 }
-
-// key={uuid()}

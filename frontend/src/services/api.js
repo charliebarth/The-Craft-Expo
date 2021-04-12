@@ -13,10 +13,10 @@ const fullHeaders = {
 const parseJSON = res => res.json()
 
 export const postUser = user => {
-  return fetch(URL + "users", {
+  return fetch(URL + 'users', {
     method: "POST",
     headers,
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
   .then(parseJSON)
 }
@@ -31,7 +31,7 @@ export const fetchLogin = credentials => {
 } 
 
 export const postCraft = craft => {
-  return fetch(URL + "user_crafts", {
+  return fetch(URL + "crafts", {
     method: 'POST',
     headers: fullHeaders,
     body: JSON.stringify(craft)

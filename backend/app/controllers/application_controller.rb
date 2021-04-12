@@ -36,4 +36,5 @@ class ApplicationController < ActionController::API
       render json: { message: 'Unauthorized Credentials' }, status: :unauthorized unless logged_in?
     end
   
-  end
+end
+  

@@ -1,5 +1,5 @@
 class DemosController < ApplicationController
-
+  skip_before_action :authorized, only: [:index]
   def index 
     demos = Demo.all
     serialized_demos = demos.map {|demo| DemoSerializer.new(demo)}

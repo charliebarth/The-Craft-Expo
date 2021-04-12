@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { getCrafts } from '../redux/actions/craftActions'
 import { useSelector, useDispatch } from 'react-redux'
-import DemoCrafts from '../components/demoCrafts'
+import Crafts from '../components/crafts'
 
 export default function CraftsContainer() {
 
@@ -21,7 +21,7 @@ export default function CraftsContainer() {
           <h1 id="demos-header">Crafts</h1>
         </div>
 
-        {crafts.length > 0 ? <DemoCrafts crafts={crafts} /> : null }
+        {crafts.length > 0 ? <Crafts crafts={crafts} /> : null }
 
         </div>
       </div>
