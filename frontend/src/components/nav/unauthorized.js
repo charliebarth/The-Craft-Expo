@@ -5,13 +5,13 @@ export default function Unauthorized() {
 
     <nav className="nav" >
       <Link to="/login" className="nav-link" >
-        <span className="thrasher" >
+        <span>
           LOGIN
         </span>
       </Link>
     
       <Link to="/signup" className="nav-link" >
-        <span className="thrasher" >
+        <span>
           SIGNUP
         </span>
       </Link>

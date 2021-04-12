@@ -18,7 +18,7 @@ export default function CraftsContainer() {
         <div id="demos-sub-container">
         
         <div id="demos-header-container">
-          <h1 id="demos-header">Crafts</h1>
+          <h1 id="demos-header"></h1>
         </div>
 
         {crafts.length > 0 ? <Crafts crafts={crafts} /> : null }
