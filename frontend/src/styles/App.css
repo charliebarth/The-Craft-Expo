@@ -6,7 +6,7 @@
   height: 44.2vw;
 }
 
-/* #crafts-list {
+#crafts-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 1em;
@@ -50,4 +50,4 @@ nav a {
 h1, h2, p, ol, li, ul {
 
   color: white;
-} */
+}

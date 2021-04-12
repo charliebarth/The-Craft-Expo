@@ -13,7 +13,7 @@ export default function NavBar({ handleLogout }) {
     <header>
       {/* <Logo /> */}
       
-      <div className="sub-header">
+      <div>
           {/* <Dummy /> */}
           <Link to="/your-archive">Your Archive</Link>
           <Link to="/drafting-board">Drafting Board</Link>

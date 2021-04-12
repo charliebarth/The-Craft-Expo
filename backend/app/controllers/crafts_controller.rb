@@ -1,4 +1,5 @@
 class CraftsController < ApplicationController
+  skip_before_action :authorized, only: [:index]
   def create
         #user = User.find_by(username: craft_params[:username])
         #demo = Demo.find_by(name: craft_params[:demo_name])
