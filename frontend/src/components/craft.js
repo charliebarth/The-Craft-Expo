@@ -3,7 +3,6 @@ import { getUserId } from '../redux/actions/userActions'
 import { postCraft } from '../services/api'
 
 export default function Craft( craft ) {
-  //console.log(craft)
   const title = craft.craft.name
   
 //   const handleClick = event => {
@@ -11,8 +10,6 @@ export default function Craft( craft ) {
 //     getUserId()
 //     postCraft(craft.craft)
 //   }
-  
-  //const foundCraft = craft.find(craft => craft.name.toLowerCase().replace(/[ ]/g, "-") === title)
 
   return (
 
