@@ -11,15 +11,15 @@ export default function NavBar({ handleLogout }) {
 
   return (
     <header>
-      {/* <Logo /> */}
       
-      <div>
+      <div id="navbar1">
           {/* <Dummy /> */}
+        { user !== "" ? 
+          <div>
+          <Authorized handleLogout={handleLogout} /> 
           <Link to="/your-archive">Your Archive</Link>
           <Link to="/drafting-board">Drafting Board</Link>
-
-        { user !== "" ? 
-          <Authorized handleLogout={handleLogout} /> 
+          </div>
           : 
           <Unauthorized /> 
         }
